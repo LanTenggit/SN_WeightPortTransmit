@@ -13,12 +13,29 @@ MODE:NORMAL
 WT:0.0000g
 ----COMPLETE----
 
-SIGNATURE:     
+SIGNATURE:   
+电子秤原始数据：
+
+TYPE:21041
+ID:2
+DATE:19-07-02TIME:19-35-42
+TEMP:24.0C
+BAT:FULL(EXT)
+----------------
+
+MODE:NORMAL
+REF:200.0000gSTATUS:STEADY
+STEP:NONE
+TARE:NONE
+ZERO:NATURAL
+WT:0.0000g
+----COMPLETE----
+
+SIGNATURE:   
+  
 
 
 
 
 
 
-
-
