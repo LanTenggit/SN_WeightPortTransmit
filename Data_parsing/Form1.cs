@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,9 +17,23 @@ namespace Data_parsing
 {
     public partial class Form1 : Form
     {
+        [DllImport("user32.dll")]
+        static extern bool CreateCaret(IntPtr hWnd, IntPtr hBitmap,
+            int nWidth, int nHeight);
+        [DllImport("user32.dll")]
+        static extern bool ShowCaret(IntPtr hWnd);
+        [DllImport("User32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
+        [DllImport("User32.dll")]
+        static extern bool SetCaretPos(int x, int y);
+        [DllImport("user32.dll")]
+        static extern bool DestroyCaret();
+
         public Form1()
         {
             InitializeComponent();
+            this.tb_SN.GotFocus += new EventHandler(textBox1_GotFocus);
+            this.tb_SN.LostFocus += new EventHandler(textBox1_LostFocus);
         }
 
 
@@ -106,6 +121,9 @@ namespace Data_parsing
 
             Thread th_recevice = new Thread(Recevice);
             th_recevice.Start();
+
+            Thread th_fouce = new Thread(Fouce);
+            th_fouce.Start();
         }
         /// <summary>
         /// 扫描枪
@@ -204,7 +222,7 @@ namespace Data_parsing
             catch (Exception)
             {
 
-                MessageBox.Show("串口被占用！");
+                MessageBox.Show("串口不存在或被占用！");
             }
         }
        
@@ -470,6 +488,60 @@ namespace Data_parsing
         {
             DataShow ds = new DataShow();
             ds.Show();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
+
+        /// <summary>
+        /// 获取焦点
+        /// </summary>
+        public void Fouce() {
+
+
+            while (true)
+            {
+                Thread.Sleep(2000);
+                this.Invoke(new Action(() =>
+                {
+
+                    
+                    if (this.TopMost==false)
+                    {
+                        this.TopMost = true;
+                    }
+                    
+
+                    if (this.tb_SN.Focused == false)
+                    {
+                        //tb_SN.Cursor.HotSpot;
+                        //tb_SN
+                        this.tb_SN.Focus();
+                        tb_SN.SelectAll();
+
+                        
+                    }
+                }));
+            }
+
+
+
+        }
+
+
+
+        void textBox1_LostFocus(object sender, EventArgs e)
+        {
+            HideCaret(this.tb_SN.Handle);
+            DestroyCaret();
+        }
+
+        void textBox1_GotFocus(object sender, EventArgs e)
+        {
+            CreateCaret(tb_SN.Handle, IntPtr.Zero, 3, tb_SN.Height);
+            ShowCaret(tb_SN.Handle);
         }
     }
 }

@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.bn_shao);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 58);
+            this.groupBox1.Location = new System.Drawing.Point(12, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(258, 225);
             this.groupBox1.TabIndex = 1;
@@ -150,7 +150,7 @@
             // 
             // bn_Set
             // 
-            this.bn_Set.Location = new System.Drawing.Point(299, 303);
+            this.bn_Set.Location = new System.Drawing.Point(195, 284);
             this.bn_Set.Name = "bn_Set";
             this.bn_Set.Size = new System.Drawing.Size(75, 23);
             this.bn_Set.TabIndex = 8;
@@ -169,7 +169,7 @@
             this.groupBox2.Controls.Add(this.bn_prot);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(535, 58);
+            this.groupBox2.Location = new System.Drawing.Point(308, 44);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(246, 225);
             this.groupBox2.TabIndex = 2;
@@ -286,7 +286,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(307, 25);
+            this.label9.Location = new System.Drawing.Point(191, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(199, 20);
             this.label9.TabIndex = 4;
@@ -294,7 +294,7 @@
             // 
             // bn_show
             // 
-            this.bn_show.Location = new System.Drawing.Point(419, 303);
+            this.bn_show.Location = new System.Drawing.Point(308, 284);
             this.bn_show.Name = "bn_show";
             this.bn_show.Size = new System.Drawing.Size(75, 23);
             this.bn_show.TabIndex = 9;
@@ -306,7 +306,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 354);
+            this.ClientSize = new System.Drawing.Size(571, 316);
             this.Controls.Add(this.bn_show);
             this.Controls.Add(this.bn_Set);
             this.Controls.Add(this.label9);
@@ -320,6 +320,7 @@
             this.Text = "电子秤信息解析";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
