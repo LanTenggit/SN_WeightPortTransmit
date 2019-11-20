@@ -45,7 +45,7 @@ namespace Data_parsing
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //button1.Hide();
             //开机自启
             //Registry.SetValue("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
             //  System.IO.Path.GetFileName(Application.ExecutablePath), Application.StartupPath + "\\"
@@ -503,7 +503,7 @@ namespace Data_parsing
 
             while (true)
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 this.Invoke(new Action(() =>
                 {
 
@@ -517,12 +517,14 @@ namespace Data_parsing
                     if (this.tb_SN.Focused == false)
                     {
                         //tb_SN.Cursor.HotSpot;
-                        //tb_SN
+                       
                         this.tb_SN.Focus();
                         tb_SN.SelectAll();
-
-                        
                     }
+                    ////OnMouseClick(null);
+                    //button1_Click(null, null);
+                    //Form1_Click(null,null);
+                   
                 }));
             }
 
@@ -543,5 +545,65 @@ namespace Data_parsing
             CreateCaret(tb_SN.Handle, IntPtr.Zero, 2, tb_SN.Height);
             ShowCaret(tb_SN.Handle);
         }
+
+      
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("窗体被点击");
+
+        }
+
+
+
+        //[DllImport("User32")]
+        //public extern static void mouse_event(int dwFlags, int dx, int dy, int dwData, IntPtr dwExtraInfo);
+        //[DllImport("User32")]
+        //public extern static void SetCursorPos(int x, int y);
+        //[DllImport("User32")]
+        //public extern static bool GetCursorPos(out POINT p);
+        //[StructLayout(LayoutKind.Sequential)]
+        //public struct POINT
+        //{
+        //    public int X;
+        //    public int Y;
+        //}
+        //public enum MouseEventFlags
+        //{
+        //    Move = 0x0001, //移动鼠标
+        //    LeftDown = 0x0002,//模拟鼠标左键按下
+        //    LeftUp = 0x0004,//模拟鼠标左键抬起
+        //    RightDown = 0x0008,//鼠标右键按下
+        //    RightUp = 0x0010,//鼠标右键抬起
+        //    MiddleDown = 0x0020,//鼠标中键按下 
+        //    MiddleUp = 0x0040,//中键抬起
+        //    Wheel = 0x0800,
+        //    Absolute = 0x8000//标示是否采用绝对坐标
+        //}
+        ////private void button1_Click(object sender, EventArgs e)
+        ////{
+        ////    // POINT p = new POINT();
+        ////    // GetCursorPos(out p);
+        ////    // MessageBox.Show(p.X.ToString()+":"+p.Y.ToString());
+        ////    AutoClick();
+        ////}
+
+        //public static void AutoClick()
+        //{
+        //    while (true)
+        //    {
+        //        Thread.Sleep(5000);
+        //        //设置鼠标的坐标
+
+        //        SetCursorPos(120, 40);
+
+        //        //这里模拟的是一个鼠标双击事件
+        //        mouse_event((int)(MouseEventFlags.LeftUp | MouseEventFlags.Absolute), 72, 40, 0, IntPtr.Zero);
+        //        mouse_event((int)(MouseEventFlags.LeftDown | MouseEventFlags.Absolute), 72, 40, 0, IntPtr.Zero);
+        //        Thread.Sleep(2000);
+        //        mouse_event((int)(MouseEventFlags.LeftUp | MouseEventFlags.Absolute), 72, 40, 0, IntPtr.Zero);
+        //        mouse_event((int)(MouseEventFlags.LeftDown | MouseEventFlags.Absolute), 72, 40, 0, IntPtr.Zero);
+        //    }
+        //}
     }
 }
