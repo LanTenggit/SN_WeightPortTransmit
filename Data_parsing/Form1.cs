@@ -540,7 +540,7 @@ namespace Data_parsing
 
         void textBox1_GotFocus(object sender, EventArgs e)
         {
-            CreateCaret(tb_SN.Handle, IntPtr.Zero, 3, tb_SN.Height);
+            CreateCaret(tb_SN.Handle, IntPtr.Zero, 2, tb_SN.Height);
             ShowCaret(tb_SN.Handle);
         }
     }
