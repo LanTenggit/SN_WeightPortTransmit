@@ -32,8 +32,8 @@ namespace Data_parsing
         public Form1()
         {
             InitializeComponent();
-            this.tb_SN.GotFocus += new EventHandler(textBox1_GotFocus);
-            this.tb_SN.LostFocus += new EventHandler(textBox1_LostFocus);
+            //this.tb_SN.GotFocus += new EventHandler(textBox1_GotFocus);
+            //this.tb_SN.LostFocus += new EventHandler(textBox1_LostFocus);
         }
 
 
@@ -45,6 +45,7 @@ namespace Data_parsing
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            groupBox1.Visible = false;
             //button1.Hide();
             //开机自启
             //Registry.SetValue("HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
@@ -56,16 +57,16 @@ namespace Data_parsing
             {
                 cb_port_recevice.Items.Add(com[i]);
                 cb_port_send.Items.Add(com[i]);
-                cb_port_shao.Items.Add(com[i]);
+                //cb_port_shao.Items.Add(com[i]);
             }
-            if (ini.IniReadValue("shao", "com") != string.Empty)
-            {
-                cb_port_shao.SelectedItem = ini.IniReadValue("shao", "com");
-            }
-            else
-            {
-                cb_port_shao.SelectedItem = com[0];
-            }
+            //if (ini.IniReadValue("shao", "com") != string.Empty)
+            //{
+            //    cb_port_shao.SelectedItem = ini.IniReadValue("shao", "com");
+            //}
+            //else
+            //{
+            //    cb_port_shao.SelectedItem = com[0];
+            //}
 
             if (ini.IniReadValue("send", "com") != string.Empty)
             {
@@ -91,18 +92,18 @@ namespace Data_parsing
             string[] bote = { "1200", "2400", "4800", "9600", "14400", "19200", "38400", "56000", "57600", "115200" };
             for (int i = 0; i < bote.Count(); i++)
             {
-                cb_boty_shao.Items.Add(bote[i]);
+                //cb_boty_shao.Items.Add(bote[i]);
                 cb_boty_M.Items.Add(bote[i]);
             }
 
-            if (ini.IniReadValue("shao", "boty") != string.Empty)
-            {
-                cb_boty_shao.SelectedItem = ini.IniReadValue("shao", "boty");
-            }
-            else
-            {
-                cb_boty_shao.SelectedItem = bote[3];
-            }
+            //if (ini.IniReadValue("shao", "boty") != string.Empty)
+            //{
+            //    cb_boty_shao.SelectedItem = ini.IniReadValue("shao", "boty");
+            //}
+            //else
+            //{
+            //    cb_boty_shao.SelectedItem = bote[3];
+            //}
 
 
             if (ini.IniReadValue("recevice", "boty") != string.Empty)
@@ -116,14 +117,14 @@ namespace Data_parsing
             //cb_boty_M.SelectedItem = bote[3];
             //cb_boty_shao.SelectedItem = bote[3];
             tb_M.Enabled = false;
-            bn_shao_Click(sender, e);
+            //bn_shao_Click(sender, e);
             bn_prot_Click(sender, e);
 
             Thread th_recevice = new Thread(Recevice);
             th_recevice.Start();
 
-            Thread th_fouce = new Thread(Fouce);
-            th_fouce.Start();
+            //Thread th_fouce = new Thread(Fouce);
+            //th_fouce.Start();
         }
         /// <summary>
         /// 扫描枪
@@ -132,39 +133,39 @@ namespace Data_parsing
         /// <param name="e"></param>
         private void bn_shao_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
 
-                if (port_shao.IsOpen == false)
-                {
-                    port_shao.PortName = cb_port_shao.SelectedItem.ToString();
-                    port_shao.StopBits = StopBits.One;
-                    port_shao.DataBits = 8;
-                    port_shao.BaudRate = Convert.ToInt32(cb_boty_shao.SelectedItem.ToString());
-                    port_shao.Handshake = Handshake.None;
-                    port_shao.Open();
-                    bn_shao.Text = "关闭";
-                    bn_shao.BackColor = Color.Green;
-                    cb_port_shao.Enabled = false;
-                    cb_boty_shao.Enabled = false;
-                    ini.IniWriteValue("shao", "com", cb_port_shao.SelectedItem.ToString());
-                    ini.IniWriteValue("shao", "boty", cb_boty_shao.SelectedItem.ToString());
-                }
-                else
-                {
-                    port_shao.Close();
-                    bn_shao.Text = "打开";
-                    bn_shao.BackColor = Color.Empty;
-                    cb_port_shao.Enabled = true;
-                    cb_boty_shao.Enabled = true;
-                }
+            //    if (port_shao.IsOpen == false)
+            //    {
+            //        port_shao.PortName = cb_port_shao.SelectedItem.ToString();
+            //        port_shao.StopBits = StopBits.One;
+            //        port_shao.DataBits = 8;
+            //        port_shao.BaudRate = Convert.ToInt32(cb_boty_shao.SelectedItem.ToString());
+            //        port_shao.Handshake = Handshake.None;
+            //        port_shao.Open();
+            //        bn_shao.Text = "关闭";
+            //        bn_shao.BackColor = Color.Green;
+            //        cb_port_shao.Enabled = false;
+            //        cb_boty_shao.Enabled = false;
+            //        ini.IniWriteValue("shao", "com", cb_port_shao.SelectedItem.ToString());
+            //        ini.IniWriteValue("shao", "boty", cb_boty_shao.SelectedItem.ToString());
+            //    }
+            //    else
+            //    {
+            //        port_shao.Close();
+            //        bn_shao.Text = "打开";
+            //        bn_shao.BackColor = Color.Empty;
+            //        cb_port_shao.Enabled = true;
+            //        cb_boty_shao.Enabled = true;
+            //    }
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("串口被占用！");
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("串口被占用！");
 
-            }
+            //}
         }
         /// <summary>
         /// 称重
@@ -334,12 +335,12 @@ namespace Data_parsing
                                         if (wight2>=wight1)
                                         {
                                             WritetxtClass.txtWrite(txtpath, "SN:" + NoteSN + " M1:" + wightstr1 + " M2:" + wightstr2);
-                                            Upload(NoteSN,wight1, wight2);
+                                            //Upload(NoteSN,wight1, wight2);
                                         }
                                         else
                                         {
                                             WritetxtClass.txtWrite(txtpath, "SN:" + NoteSN + " M1:" + wightstr2 + " M2:" + wightstr1);
-                                            Upload(NoteSN, wight2, wight1);
+                                            //Upload(NoteSN, wight2, wight1);
                                         }
                                         
                                     }
@@ -489,10 +490,14 @@ namespace Data_parsing
             DataShow ds = new DataShow();
             ds.Show();
         }
-
+        /// <summary>
+        /// 顶端窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Shown(object sender, EventArgs e)
         {
-            this.TopMost = true;
+            //this.TopMost = true;
         }
 
         /// <summary>
@@ -546,7 +551,7 @@ namespace Data_parsing
             ShowCaret(tb_SN.Handle);
         }
 
-      
+
 
         private void Form1_Click(object sender, EventArgs e)
         {

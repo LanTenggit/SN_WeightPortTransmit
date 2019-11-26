@@ -9,9 +9,3 @@ D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.exe
 D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.pdb
 D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.SetFrom.resources
 D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.DataShow.resources
-D:\桌面\Data_parsing\Data_parsing\bin\Debug\NPOI.dll
-D:\桌面\Data_parsing\Data_parsing\bin\Debug\NPOI.OOXML.dll
-D:\桌面\Data_parsing\Data_parsing\bin\Debug\NPOI.OpenXml4Net.dll
-D:\桌面\Data_parsing\Data_parsing\bin\Debug\NPOI.OpenXmlFormats.dll
-D:\桌面\Data_parsing\Data_parsing\bin\Debug\ICSharpCode.SharpZipLib.dll
-D:\桌面\Data_parsing\Data_parsing\bin\Debug\NPOI.xml
