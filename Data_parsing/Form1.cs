@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -45,6 +46,16 @@ namespace Data_parsing
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            //'判断程序是否打开并只允许一个软件运行
+            Process[] _processes = Process.GetProcessesByName("Data_parsing");
+            if (_processes.Length > 1)
+            {
+                Process.GetProcessById(Process.GetCurrentProcess().Id).Kill();
+            }
+       
+
+
             groupBox1.Visible = false;
             //button1.Hide();
             //开机自启

@@ -9,3 +9,14 @@ D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.exe
 D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.pdb
 D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.SetFrom.resources
 D:\桌面\Data_parsing\Data_parsing\obj\Debug\Data_parsing.DataShow.resources
+D:\桌面\SN_WeightPortTransmit\Data_parsing\bin\Debug\Data_parsing.exe.config
+D:\桌面\SN_WeightPortTransmit\Data_parsing\bin\Debug\Data_parsing.exe
+D:\桌面\SN_WeightPortTransmit\Data_parsing\bin\Debug\Data_parsing.pdb
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.DataShow.resources
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.Form1.resources
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.Properties.Resources.resources
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.SetFrom.resources
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.csproj.GenerateResource.Cache
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.csproj.CoreCompileInputs.cache
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.exe
+D:\桌面\SN_WeightPortTransmit\Data_parsing\obj\Debug\Data_parsing.pdb
